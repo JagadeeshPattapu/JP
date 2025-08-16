@@ -70,3 +70,34 @@ variable "weblb_sg_egress_cidr_rules" {
   }))
   default = []
 }
+variable "webserver_ami_id" {
+  description = "AMI ID for the EC2 instance"
+  type        = string
+}
+
+variable "webserver_instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "webserver_subnet_id" {
+  description = "Subnet ID for the EC2 instance"
+  type        = string
+}
+variable "webserver_key_name" {
+  description = "Key pair name to SSH into the instance"
+  type        = string
+  default     = null
+}
+
+variable "webserver_name" {
+  description = "Name tag for the instance"
+  type        = string
+}
+
+variable "tags" {
+  description = "Additional tags"
+  type        = map(string)
+  default     = {}
+}
