@@ -38,3 +38,8 @@ weblb_sg_egress_cidr_rules = [{
   protocol    = "-1"
   cidr_blocks = ["0.0.0.0/0"]
 }]
+webserver_name = "nginx server"
+webserver_ami_id = "ami-0de716d6197524dd9"
+webserver_instance_type = "t2.micro"
+webserver_key_name = "nginx"
+webserver_subnet_id = "subnet-0bcf76ccbf9ab8b4a"

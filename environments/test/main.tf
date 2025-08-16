@@ -29,3 +29,13 @@ module "weblb_sg" {
   ingress_cidr_rules = var.weblb_sg_ingress_cidr_rules
   egress_cidr_rules  = var.weblb_sg_egress_cidr_rules
 }
+module "webserver" {
+  source             = "../../modules/ec2"
+  name               = var.webserver_name
+  ami_id             = var.webserver_ami_id
+  instance_type      = var.webserver_instance_type
+  subnet_id          = var.webserver_subnet_id
+  security_group_ids = [module.web_sg.security_group_id]
+  key_name           = var.webserver_key_name
+}
+
